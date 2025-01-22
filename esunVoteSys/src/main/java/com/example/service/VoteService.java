@@ -13,12 +13,17 @@ public class VoteService {
 
 	@Autowired
 	private VoteDao voteDao;
-	
+
 	public List<VoteItems> getAllVoteItems() {
 		return voteDao.findAll();
 	}
+
+	public int createVoteItem(String item) {
+		return voteDao.createVoteItem(item);
+	}
+
+	public int updateVoteItem(int id, String item) {
+		return voteDao.updateVoteItem(id, item);
+	}
 	
-	public VoteItems createVoteItem(VoteItems voteItems) {
-        return voteDao.save(voteItems);
-    }
 }
